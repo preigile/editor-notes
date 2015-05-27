@@ -1,1 +1,21 @@
-{{outlet}}
+<div class="block" id="createNote">
+    <div class='new-note'>
+        <div class="block" id="createForm">
+            <form class="form-horizontal block">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        {{input type="text" class="form-control" id="inputNoteTitle" placeholder="Type note title" value=title}}
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 form-btn">
+                <button type="submit" class="btn btn-info" {{action 'doneAdding'}}>Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="block" id="notesBtn">
+    {{#link-to 'notes' tagName='button' class="btn btn-info col-sm-offset-2"}}Notes{{/link-to}}
+</div>
