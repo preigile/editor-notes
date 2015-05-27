@@ -1,7 +1,7 @@
 {
   "name": "editor-notes",
-  "version": "0.0.0",
-  "description": "Small description for editor-notes goes here",
+  "version": "0.0.1",
+  "description": "Web application for short notes",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -12,12 +12,11 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/preigile/editor-notes",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
-  "license": "MIT",
+  "author": "Irina Chichikova <diva.artim@gmail.com>",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
     "ember-cli": "0.2.5",
@@ -32,6 +31,9 @@
     "ember-cli-uglify": "^1.0.1",
     "ember-data": "1.0.0-beta.17",
     "ember-disable-proxy-controllers": "^0.7.0",
-    "ember-export-application-global": "^1.0.2"
+    "ember-export-application-global": "^1.0.2",
+    "express": "^4.12.4",
+    "glob": "^4.5.3",
+    "morgan": "^1.5.3"
   }
 }
