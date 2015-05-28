@@ -28,5 +28,6 @@ var extraAssets = pickFiles('bower_components/bootstrap/dist/fonts',{
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 app.import('bower_components/moment/min/moment.min.js');
+app.import('bower_components/moment-timezone/moment-timezone.js');
 
 module.exports = mergeTrees([app.toTree(), extraAssets]);

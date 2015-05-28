@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 			var note = this.store.createRecord('note', {
 				id: new Date().getTime(),
 				title: this.get('title'),
-				date: new Date()
+				date: moment()
 			});
 			note.save();
 			console.log('The note "' + this.get('title') + '" was created');

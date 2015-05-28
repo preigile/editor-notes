@@ -8,17 +8,17 @@ module.exports = function(app) {
         {
           id: 1,
           title: 'Какой чудесный день',
-          date: Date.now() - (1000 * 60 * 60 * 24)
+          date: Date.now() - (1000 * 60 * 60 * 11)
         },
         {
           id: 2,
           title: 'Какой чудесный пень',
-          date: new Date(2013, 7, 1, 8, 3, 0)
+          date: Date.now() - (1000 * 60 * 60 * 24)
         },
         {
           id: 3,
           title: 'Какой чудесный я',
-          date: new Date(2015, 4, 27, 6, 8, 0)
+          date: Date.now() - (1000 * 60 * 60 * 60)
         },
         {
           id: 4,
