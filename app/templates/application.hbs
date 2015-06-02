@@ -1,4 +1,8 @@
 <div class='container'>
-    {{#link-to 'index'}}<h1>Welcome to Editor Notes!</h1>{{/link-to}}
+    {{#link-to 'index' class="welcome"}}
+    	<h1 class="text-center text-uppercase">Notes</h1>
+    {{/link-to}}
 </div>
-{{outlet}}
+<div class='container'>
+	{{outlet}}
+</div>

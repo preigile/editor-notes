@@ -1,0 +1,74 @@
+@main-color: #D69A14;
+@basic-color: #525453;
+@light-basic-color: #827E76;
+@background-color: #DFDCD6;
+@margin: 40px;
+
+body {
+	color: @basic-color;
+	background-color: @background-color;
+}
+
+.container, .threeNotes {
+	margin-top: @margin;
+}
+
+.notesBtn, .input-group {
+	width: 50%;
+	margin-bottom: @margin;
+}
+
+input.form-control {
+	height: 40px;
+	color: @basic-color;
+}
+
+.form-control:focus, .btn:focus {
+	outline: 0;
+	border-color: @main-color;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(204,145,7,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(204,145,7,.6);
+}
+
+.btn {
+	line-height: 1.9;
+	&:hover {
+		background-color: @main-color;
+		border-color: @main-color;
+	}
+}
+
+a.welcome, a.welcome:focus, a.welcome:hover {
+	color: @main-color;
+}
+
+hr {
+	border-top: 1px solid @light-basic-color;
+	&.titleHr {
+		border-top: 1px solid @main-color;
+	}
+}
+
+.notesPresentation {
+	margin-bottom: @margin*2;
+}
+
+.notePresentation {
+	color: @light-basic-color;
+	&:hover {
+		color: @basic-color;
+	}
+}
+
+.read-more {
+	height: 103px;
+	overflow: hidden;
+	&:hover {
+		height: auto;
+	}
+}
+
+.glyphicon {
+	top: 0;
+}
+

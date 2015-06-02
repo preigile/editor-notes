@@ -1,15 +1,14 @@
-<div class='row'>
-    <div class='col-sm-3'>
-        <p>There are {{notesCount}} notes</p>
-        <div class='list-group'>
-            {{#each}}
-                {{#link-to 'note' this classNames='list-group-item'}}
-                    {{title}}
-                {{/link-to}}
-            {{/each}}
-        </div>
-    </div>
-    <div class='col-sm-9 note-presentation'>
-        {{outlet}}
-    </div>
+<div class="block notesPresentation">
+    <h3 class="text-center text-uppercase lead">{{noteMessage}}</h3>      
+    <hr class="titleHr"/>
+    
+    {{#each}}
+        {{#view 'note' length=title.length}}
+            <div class="notePresentation">
+                <p class="text-center"><em>{{format-date date}}:</em></p>
+                <h3 class="text-center lead">{{title}}</h3> 
+            </div>    
+        {{/view}}
+        <hr/>
+    {{/each}}
 </div>
