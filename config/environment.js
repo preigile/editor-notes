@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'editor-notes',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://editor-notes.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
