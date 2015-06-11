@@ -4,5 +4,6 @@ var attr = DS.attr;
 
 export default DS.Model.extend({
 	title: attr('string'),
-	date: attr('date')
+	date: attr('date'),
+	user: DS.belongsTo('user')
 });
