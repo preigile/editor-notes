@@ -6,11 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.route('index', { path: '/' });
-	this.resource('notes', function () {
-		this.resource('note', { path: '/:id' });
-	});
-	this.route('catchall', {path: '/*wildcard'});
+  this.route('index', { path: '/' });
+  this.route('user', { path: '/user/:id' });
+  this.route('notes', { path: '/user/:id/notes' });
+  this.route('catchall', { path: '/*wildcard' });
 });
 
 export default Router;
