@@ -1,8 +1,9 @@
+@margin: 40px;
 @main-color: #D69A14;
 @basic-color: #525453;
 @light-basic-color: #827E76;
 @background-color: #DFDCD6;
-@margin: 40px;
+
 
 body {
 	color: @basic-color;
@@ -57,6 +58,10 @@ hr {
 	color: @light-basic-color;
 	&:hover {
 		color: @basic-color;
+		.glyphicon-trash {
+			display: inline;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -70,5 +75,9 @@ hr {
 
 .glyphicon {
 	top: 0;
+}
+
+.glyphicon-trash {
+	display: none;
 }
 

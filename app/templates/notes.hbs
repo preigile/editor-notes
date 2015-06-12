@@ -1,13 +1,19 @@
 <div class="block notesPresentation">
-    <h3 class="text-center text-uppercase lead">{{noteMessage}}</h3>      
+    <h3 class="text-center text-uppercase lead">{{model.name}}, {{noteMessage}}</h3>
+    {{#link-to 'user' this class="welcome"}}
+        <h4 class="text-center lead">Add new note</h4>
+    {{/link-to}}    
     <hr class="titleHr"/>
-    
-    {{#each}}
+
+    {{#each sortedNotes}}
         {{#view 'note' length=title.length}}
-            <div class="notePresentation">
-                <p class="text-center"><em>{{format-date date}}:</em></p>
-                <h3 class="text-center lead">{{title}}</h3> 
-            </div>    
+                <div class="notePresentation">
+                    <p class="text-center">
+                        <small class="publicDate">{{format-date date}}</small>
+                        <small class="glyphicon glyphicon-trash" {{action 'removeNote' this}}></small>                        
+                    </p>
+                    <h3 class="text-center lead">{{title}}</h3> 
+                </div>
         {{/view}}
         <hr/>
     {{/each}}
