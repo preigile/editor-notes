@@ -2,22 +2,28 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
 	actions: {
-		doneAdding: function() {
-			var note = this.store.createRecord('note', {
-				id: new Date().getTime(),
-				title: this.get('title'),
-				date: new Date()
-			});
-			note.save();
-			console.log('The note "' + this.get('title') + '" was created');
-			this.set('title', '');
+		doneAddingUserName: function() {
+			var userName = this.get('name');
+			var userId = md5(userName.toLowerCase());
+			var _this = this;
+
+			var onSuccess = function () {
+				_this.transitionToRoute('user', userId);
+			};
+
+			var onError = function () {
+				var newUser = _this.store.createRecord('user', {
+					id: userId,
+					name: userName
+				});
+				newUser.save();
+				console.log('The user "' + newUser.id + '" was created');
+				_this.transitionToRoute('user', newUser.id);
+			};
+
+			this.store.find('user', userId).then(onSuccess, onError);
+			// localStorage.userId = this.get('model', userId);
+			this.set('name', '');
 		}
-	},
-	
-	sortProperties: ['date'],
-	sortAscending: false,
-	
-	lastNotes: function () {
-        return this.filterBy('date').slice(0, 3);
-    }.property('@each.date')
+	}
 });

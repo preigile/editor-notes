@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "moment"
+    "moment",
+    "md5"
   ],
   "browser": true,
   "boss": true,

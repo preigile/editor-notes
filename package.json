@@ -1,6 +1,6 @@
 {
   "name": "editor-notes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web application for short notes",
   "private": true,
   "directories": {

@@ -1,28 +1,9 @@
-<div class="block" id="createNote">	
+<div class="block" id="createUser">	
 	<div class="input-group col-sm-offset-3">
-		{{input type="text" class="form-control" id="inputNoteTitle" placeholder="Type a note" value=title insert-newline='doneAdding'}}
+		{{input type="text" class="form-control" id="inputUserName" placeholder="Type your name" value=name insert-newline='doneAddingUserName'}}
 		<span class="input-group-btn">
-			<button type="submit" class="btn glyphicon glyphicon-plus" {{action 'doneAdding'}}></button>
+			<button type="submit" class="btn glyphicon glyphicon-plus" {{action 'doneAddingUserName'}}></button>
 		</span>
 	</div>
 </div>
 
-<div class="block ">
-	{{#if lastNotes}}
-		<h3 class="text-center text-uppercase lead">Your last notes:</h3>
-		<hr class="titleHr"/>
-	{{/if}}
-	{{#each lastNotes}}
-		<h3 class="text-center lead">{{title}}</h3>
-		<p class="text-center"><em>{{format-date date}}</em></p>
-		<hr/>
-	{{else}}
-		<h3 class="text-center lead">You don't have any notes</h3>
-    {{/each}}
-</div>
-
-<div class="block">
-	{{#if lastNotes}}
-    	{{#link-to 'notes' tagName='button' class="btn col-sm-offset-3 notesBtn"}}All Notes{{/link-to}}
-    {{/if}}
-</div>
