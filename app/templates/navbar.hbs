@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class='container'>
+		{{#link-to 'index' class="navbar-left welcome"}}
+	    	<h1 class="text-uppercase">Notes</h1>
+	    {{/link-to}}
+		<p class="navbar-text navbar-right">Signed in as {{model.name}} 
+			{{#link-to 'login' class="welcome glyphicon glyphicon-log-out"}}{{/link-to}}
+		</p>
+		
+	</div>
+</nav>

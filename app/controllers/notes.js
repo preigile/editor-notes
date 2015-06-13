@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
 		var userId = this.get('model.id');
 		var notesCount = this.get('model.notes.length');
 
-		if (notesCount === 1) return 'You have ' + notesCount + ' note';
-		if (notesCount > 1) return 'You have ' + notesCount + ' notes';
+		if (notesCount === 1) { return 'You have ' + notesCount + ' note'; }
+		if (notesCount > 1) { return 'You have ' + notesCount + ' notes'; }
 
 		this.transitionToRoute('user', userId);
 	}.property('model.notes.length'),

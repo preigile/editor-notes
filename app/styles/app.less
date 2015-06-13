@@ -5,13 +5,17 @@
 @background-color: #DFDCD6;
 
 
-body {
+body, .navbar-default {
 	color: @basic-color;
 	background-color: @background-color;
 }
 
-.container, .threeNotes {
-	margin-top: @margin;
+.content, .threeNotes {
+	margin-top: @margin * 3;
+}
+
+.navbar-text {
+ 	margin-top: @margin - 5;
 }
 
 .notesBtn, .input-group {
@@ -33,6 +37,7 @@ input.form-control {
 
 .btn {
 	line-height: 1.9;
+  	background-color: #CCCCCC;
 	&:hover {
 		background-color: @main-color;
 		border-color: @main-color;

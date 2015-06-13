@@ -1,0 +1,9 @@
+<div class="block" id="createUser">	
+	<div class="input-group col-sm-offset-3">
+		{{input type="text" class="form-control" id="inputUserName" placeholder="Type your name" value=name insert-newline='doneAddingUserName'}}
+		<span class="input-group-btn">
+			<button type="submit" class="btn glyphicon glyphicon-plus" {{action 'doneAddingUserName'}}></button>
+		</span>
+	</div>
+</div>
+

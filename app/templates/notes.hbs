@@ -1,6 +1,8 @@
+{{partial "navbar"}}
+
 <div class="block notesPresentation">
     <h3 class="text-center text-uppercase lead">{{model.name}}, {{noteMessage}}</h3>
-    {{#link-to 'user' this class="welcome"}}
+    {{#link-to 'index' class="welcome"}}
         <h4 class="text-center lead">Add new note</h4>
     {{/link-to}}    
     <hr class="titleHr"/>

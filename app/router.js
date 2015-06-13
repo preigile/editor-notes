@@ -7,8 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', { path: '/' });
-  this.route('user', { path: '/user/:id' });
-  this.route('notes', { path: '/user/:id/notes' });
+  this.route('login');
+  this.route('notes');
   this.route('catchall', { path: '/*wildcard' });
 });
 
