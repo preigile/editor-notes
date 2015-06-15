@@ -4,19 +4,23 @@ export default Ember.Controller.extend({
 	actions: {
 		doneAddingNote: function() {
 			var _this = this;
+			var noteTitle = this.get('title');
+			var emptyString = Ember.isBlank(noteTitle);
 			
 			var newNote = this.store.createRecord('note', {
 				title: this.get('title'),
 				date: new Date()
 			});
-			
-			newNote.save().then(function(newNote) {
-				var user = _this.get('model');
-				_this.get('model.notes').addObject(newNote);
-				user.save();
-			}, function() {
-				newNote.rollback();
-			});
+
+			if (!emptyString && noteTitle.length < 513) {
+				newNote.save().then(function(newNote) {
+					var user = _this.get('model');
+					_this.get('model.notes').addObject(newNote);
+					user.save();
+				}, function() {
+					newNote.rollback();
+				});
+			}
 
 			this.set('title', '');
 		}

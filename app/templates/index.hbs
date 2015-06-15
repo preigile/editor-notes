@@ -1,8 +1,8 @@
-{{partial "navbar"}}
+{{render "navbar"}}
 
-<div class="block" id="createNote">	
-	<div class="input-group col-sm-offset-3">
-		{{input type="text" class="form-control" id="inputNoteTitle" placeholder="Type a note" value=title insert-newline='doneAddingNote'}}
+<div class="block">	
+	<div class="input-group col-sm-offset-3" id="createNote">
+		{{input type="text" class="form-control" id="inputNoteTitle" placeholder="Type a note" value=title insert-newline='doneAddingNote' maxlength="512"}}
 		<span class="input-group-btn">
 			<button type="submit" class="btn glyphicon glyphicon-plus" {{action 'doneAddingNote'}}></button>
 		</span>
@@ -11,12 +11,16 @@
 
 <div class="block">
 	{{#if latestNotes}}
-		<h3 class="text-center text-uppercase lead">{{model.name}}, your last notes:</h3>
+		<h3 class="text-center text-uppercase lead">
+			{{model.name}}, your last notes:
+		</h3>
 		<hr class="titleHr"/>
 	{{/if}}
 	{{#each latestNotes}}
 		<h3 class="text-center lead">{{title}}</h3>
-		<p class="text-center"><em>{{format-date date}}</em></p>
+		<p class="text-center">
+			<small class="publicDate">{{format-date date}}</small>
+		</p>
 		<hr/>
 	{{else}}
 		<h3 class="text-center lead">Hi {{model.name}}, you don't have any notes</h3>
