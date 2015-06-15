@@ -1,12 +1,28 @@
+import Ember from 'ember';
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('user', 'Unit | Model | user', {
-  // Specify the other units that are required for this test.
-  needs: []
+	needs: ['model:note']
 });
 
-test('it exists', function(assert) {
-  var model = this.subject();
-  // var store = this.store();
-  assert.ok(!!model);
+test('user is a valid ember-data Model', function (assert) {
+	var store = this.store();
+	var user = this.subject({ name: 'User' });
+	assert.ok(user);
+	assert.ok(user instanceof DS.Model);
+
+	Ember.run(function() {
+		user.set('note', store.createRecord('note', {}));
+	});
+
+	assert.ok(user.get('note'));
+	assert.ok(user.get('note') instanceof DS.Model);
+});
+
+test('notes relationship', function(assert) {
+	var User = this.store().modelFor('user');
+	var relationship = Ember.get(User, 'relationshipsByName').get('notes');
+
+	assert.equal(relationship.key, 'notes');
+	assert.equal(relationship.kind, 'hasMany');
 });
