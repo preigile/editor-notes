@@ -23,6 +23,15 @@ export default Ember.Controller.extend({
 			}
 
 			this.set('title', '');
+		},
+
+		logout: function() {
+			var _this = this;
+			var cookie = this.get('cookie');
+
+			cookie.setCookie('user', '').then(function() {
+				_this.transitionToRoute('login');
+			});
 		}
 	},
 

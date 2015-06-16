@@ -17,6 +17,15 @@ export default Ember.Controller.extend({
 	actions: {
 		removeNote: function(note) {
 			note.destroyRecord();
+		},
+		
+		logout: function() {
+			var _this = this;
+			var cookie = this.get('cookie');
+
+			cookie.setCookie('user', '').then(function() {
+				_this.transitionToRoute('login');
+			});
 		}
 	}
 });
