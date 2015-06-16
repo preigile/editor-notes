@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
 		doneAddingUserName: function() {
 			var userName = this.get('name');
 			var userId = md5(userName.toLowerCase());
+			var emptyString = Ember.isBlank(userName);
 			var _this = this;
 			var cookie = this.get('cookie');
 
@@ -26,8 +27,10 @@ export default Ember.Controller.extend({
 				});
 			};
 
-			this.store.find('user', userId).then(onSuccess, onError);
-			this.set('name', '');
+			if (!emptyString && userName.length < 33) {
+				this.store.find('user', userId).then(onSuccess, onError);
+				this.set('name', '');
+			}
 		}
 	}
 });
